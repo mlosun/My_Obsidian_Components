@@ -1,0 +1,277 @@
+.gtd-task-manager {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4-2);
+  padding: var(--size-4-2);
+}
+
+/* 统计样式 */
+.gtd-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--size-4-2);
+  padding: var(--size-4-2);
+  background: var(--background-secondary);
+  border-radius: var(--radius-m);
+  width: 100%;
+}
+
+.gtd-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--size-4-4);
+  min-height: 80px;
+  background: var(--background-primary);
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.gtd-stat-item:hover {
+  background: var(--background-primary-alt);
+  border-color: var(--background-modifier-border);
+}
+
+.gtd-stat-item.active {
+  background: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.gtd-stat-item.active .gtd-stat-label,
+.gtd-stat-item.active .gtd-stat-value {
+  color: var(--text-on-accent);
+}
+
+.gtd-stat-label {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.gtd-stat-value {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--text-normal);
+  transition: color 0.2s ease;
+}
+
+/* 控制面板样式 */
+.gtd-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4-2);
+}
+
+.gtd-control-row {
+  display: flex;
+  gap: var(--size-4-2);
+}
+
+.gtd-search {
+  flex: 1;
+  padding: var(--size-4-1) var(--size-4-2);
+  border-radius: var(--radius-s);
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.gtd-search:focus {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 2px var(--background-modifier-border);
+}
+
+/* 筛选器样式 */
+.gtd-task-filter {
+  display: flex;
+  gap: var(--size-4-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--size-4-2);
+}
+
+.gtd-filter-btn {
+  padding: var(--size-4-1) var(--size-4-2);
+  border-radius: var(--radius-s);
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gtd-filter-btn:hover {
+  background: var(--background-modifier-hover);
+}
+
+.gtd-filter-btn.active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+/* 任务列表样式 */
+.gtd-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4-2);
+}
+
+.gtd-task-item {
+  display: flex;
+  align-items: center;
+  padding: var(--size-4-2);
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  transition: all 0.2s ease;
+}
+
+.gtd-task-item:hover {
+  background: var(--background-primary-alt);
+}
+
+.gtd-task-content {
+  flex: 1;
+  cursor: pointer;
+  color: var(--text-normal);
+}
+
+.gtd-task-filepath {
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-bottom: var(--size-4-1);
+}
+
+.gtd-task-actions {
+  display: flex;
+  gap: var(--size-4-1);
+}
+
+.gtd-action-btn {
+  padding: var(--size-4-1) var(--size-4-2);
+  border-radius: var(--radius-s);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1em;
+}
+
+/* 状态按钮样式 */
+.gtd-action-btn.status-btn {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.gtd-action-btn.status-btn:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.gtd-action-btn.status-btn.inbox:hover {
+  color: var(--color-blue);
+}
+
+.gtd-action-btn.status-btn.next:hover {
+  color: var(--color-green);
+}
+
+.gtd-action-btn.status-btn.waiting:hover {
+  color: var(--color-orange);
+}
+
+.gtd-action-btn.status-btn.someday:hover {
+  color: var(--color-purple);
+}
+
+/* 完成/取消完成按钮样式 */
+.gtd-action-btn.complete {
+  color: var(--text-muted);
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: var(--size-4-1) var(--size-4-2);
+  border: 2px solid var(--text-muted);
+  border-radius: var(--radius-s);
+}
+
+.gtd-action-btn.complete:hover {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.gtd-action-btn.uncomplete {
+  color: var(--color-green);
+  font-size: 1.2em;
+  padding: var(--size-4-1) var(--size-4-2);
+  border: 2px solid var(--color-green);
+  border-radius: var(--radius-s);
+}
+
+.gtd-action-btn.uncomplete:hover {
+  color: var(--text-muted);
+  border-color: var(--text-muted);
+}
+
+/* 空状态样式 */
+.gtd-empty-state {
+  text-align: center;
+  padding: var(--size-4-4);
+  color: var(--text-muted);
+}
+
+/* 控制元素样式 */
+.gtd-select {
+  padding: var(--size-4-1) var(--size-4-2);
+  border-radius: var(--radius-s);
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  min-width: 120px;
+}
+
+.gtd-select:focus {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 2px var(--background-modifier-border);
+}
+
+/* 刷新按钮样式 */
+.gtd-refresh-btn {
+  padding: var(--size-4-1) var(--size-4-2);
+  border-radius: var(--radius-s);
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2em;
+}
+
+.gtd-refresh-btn:hover {
+  background: var(--background-primary-alt);
+  border-color: var(--interactive-accent);
+}
+
+.gtd-refresh-btn.refreshing {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 设置面板额外样式 */
+.gtd-setting-row {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-2);
+}
+
+/* Markdown 渲染样式 */
+.gtd-task-content .task-list-item {
+  margin: 0;
+  padding: 0;
+}
