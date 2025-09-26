@@ -30,18 +30,7 @@ function App() {
           <option value="completed">已完成</option>
         </select>
       </SettingItem>
-      
-      <SettingItem label="显示任务路径">
-        <div className="gtd-setting-row">
-          <SettingInput
-            type="checkbox"
-            checked={settings.showFilePath || false}
-            onChange={(e) => updateSettings({ showFilePath: e.target.checked })}
-          />
-          <SettingDescription>显示任务所在的文件路径</SettingDescription>
-        </div>
-      </SettingItem>
-      
+
       <SettingItem label="任务排序">
         <select
           value={settings.sortBy || 'modified'}
@@ -54,35 +43,31 @@ function App() {
         </select>
       </SettingItem>
 
-      <SettingItem label="最大加载任务数">
+      <SettingItem label="显示任务路径">
         <div className="gtd-setting-row">
           <SettingInput
-            type="number"
-            value={settings.taskLimit || 100}
-            onChange={(e) => updateSettings({ taskLimit: Number(e.target.value) })}
-            min={1}
-            max={1000}
-            style={{ width: '100px' }}
+            type="checkbox"
+            checked={settings.showFilePath || false}
+            onChange={(e) => updateSettings({ showFilePath: e.target.checked })}
           />
-          <SettingDescription>设置较小的值可以提高组件响应速度（默认: 100）</SettingDescription>
         </div>
       </SettingItem>
-      
+
       <SettingTitle>📖 GTD 工作流说明</SettingTitle>
       <SettingDescription>
-        1. 收集箱：捕获所有新任务和想法
-        2. 下一步：已明确的下一步行动
-        3. 等待中：需要等待他人的任务
-        4. 将来/也许：未来可能执行的任务
+        1. 收集箱：捕获所有新任务和想法<br />
+        2. 下一步：已明确的下一步行动<br />
+        3. 等待中：需要等待他人的任务<br />
+        4. 将来/也许：未来可能执行的任务<br />
         5. 已完成：已完成的任务
       </SettingDescription>
       
       <SettingTitle>🏷️ 任务标签说明</SettingTitle>
       <SettingDescription>
-        - #next：标记为下一步任务
-        - #waiting：标记为等待中任务
-        - #someday：标记为将来/也许任务
-        - #project：项目任务
+        - #next：标记为下一步任务<br />
+        - #waiting：标记为等待中任务<br />
+        - #someday：标记为将来/也许任务<br />
+        - #project：项目任务<br />
         - #context：上下文任务
       </SettingDescription>
     </Settings>
