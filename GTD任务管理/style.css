@@ -227,7 +227,6 @@
   padding: var(--size-4-1) var(--size-4-2);
   border-radius: var(--radius-s);
   border: 1px solid var(--background-modifier-border);
-  background: var(--background-primary);
   color: var(--text-normal);
   min-width: 120px;
 }
